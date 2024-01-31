@@ -1,0 +1,23 @@
+<!-- Step 3 Add Header -->
+<%- include('partials/header') %>
+
+<% if(locals.post){ %>
+  <h2><%=post.name%></h2>
+  <h2><%=post.body%></h2>
+<% } %>
+
+<% if(locals.clicked){ %>
+  <form action="/compose1" method="POST">
+  <input name="name" type="text" class="feedback-input" placeholder="Name" />
+  <input name="body" type="text" class="feedback-input" placeholder="Post" />
+  <input type="submit" value="SUBMIT" />
+  </form>
+<% }else{ %>
+<h1>Add your blog</h1>
+<form action="/compose" method="POST">
+  <input type="submit" value="Generate Blog">
+</form>
+<% } %>
+
+<!-- Step 3 Add Footer -->
+<%- include('partials/footer'); -%>
